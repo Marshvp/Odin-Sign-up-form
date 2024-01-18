@@ -32,7 +32,7 @@
                         <div>
                             <div><label for="lastName">Last Name</label></div>
                             
-                            <div><input type="text" name="lastName" id="lastName" placeholder="lastName Name"></div>
+                            <div><input type="text" name="lastName" id="lastName" placeholder="Last Name"></div>
                         </div>
                             
                         
@@ -49,7 +49,7 @@
                         <div>
                             <div><label for="phoneNumber">Phone Number</label></div>
                             
-                            <div><input type="phoneNumber" name="phoneNumber" id="phoneNumber" placeholder="+44"></div>
+                            <div><input type="tel" name="phoneNumber" id="phoneNumber" placeholder="+44"></div>
                         </div>
 
                     </div>
@@ -65,14 +65,50 @@
 
                         <div id="divpass">
                             <div><label for="confirmPassword">Confirm Password</label></div>
-                            <div><input type="confirmPassword" name="confirmPassword" id="confirmPassword" placeholder="Please confirm password"></div>
+                            <div><input type="password" name="confirmPassword" id="confirmPassword" placeholder="Please confirm password"></div>
                         </div>
                     </div>
+
                 </form>
+                <div class="buttonContainer">
+                    <button type="button" id="myButton">Sign up</button>
+                </div>
             </div>
         </div>
 
 
     </div>
+
+
+    <script>
+        window.onload = function() {
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirmPassword');
+            const emailAddress = document.getElementById('emailAddress');
+            
+            function validatePassword() {
+                if (password.value !== confirmPassword.value) {
+                    password.classList.add('error');
+                    confirmPassword.classList.add('error');
+                } else {
+                    password.classList.remove('error');
+                    confirmPassword.classList.remove('error');
+                }
+            }
+
+            function validateEmail() {
+                if (!emailAddress.value.includes('@')) {
+                    emailAddress.classList.add('error');
+                } else {
+                    emailAddress.classList.remove('error');
+                }
+            }
+            
+            password.onchange = validatePassword;
+            confirmPassword.onkeyup = validatePassword;
+            emailAddress.onchange = validateEmail;
+            emailAddress.onkeyup = validateEmail;
+        }
+    </script>
 </body>
 </html>

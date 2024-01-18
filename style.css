@@ -5,7 +5,7 @@ body {
     width: auto;
     margin: 0;
     padding: 0;
-    font-family: Releway, sans-serif;
+    font-family: Raleway, sans-serif;
     background-color:rgb(242, 245, 245);
 }
 
@@ -35,49 +35,78 @@ body {
 }
 
 form {
-    background-color: white;
+    
+    box-shadow: 20px -2px 100px  black;
 }
 
 .formSection > div {
-    display: flex; /* Makes it a flex container */
-    flex-direction: column; /* Stacks child elements vertically */
-    align-items: center; /* Centers child elements horizontally */
-    margin-bottom: 10px; /* Adds some space between the fields */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 10px;
 }
 .formSection > div > div {
-    width: 100%; /* Makes each inner div take full width of the parent */
+    width: 100%; 
     display: flex;
-    justify-content: center; /* Centers content of each inner div */
+    justify-content: center;
 }
 
 .formName, .formContact, .formPassword {
     
-    padding-top: .5em;
-    /* padding-left: 3em; */
-    padding-bottom: .5em;
-    
+    padding: 0.5em 0;
+    background-color: white;
     font-size: 24px;
     display: flex;
-    justify-content: space-around;
-    
-    
-    /* align-items: start; */
-    /* box-shadow: black; */
+    justify-content: space-around; 
 }
 
 #divpass {
-    display: flex; /* Makes divpass a flex container */
-    flex-direction: column; /* Stacks child elements vertically */
-    align-items: center; /* Centers child elements horizontally */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
 }
 #divpass > div {
-    width: 100%; /* Makes each inner div take full width of the parent */
+    width: 100%; 
     display: flex;
-    justify-content: center; /* Centers content of each inner div */
+    justify-content: center; 
 }
 
 input {
-    border-color: #E5E7EB;
-    border-radius: 2px;
+    border:2px solid #E5E7EB;
+    border-radius: 5px;
+    background-color: antiquewhite;
     
+    
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center; 
+    padding: 20px; 
+}
+
+#myButton {
+    padding: 10px 20px; 
+    font-size: 16px; 
+    color: #fff;
+    background-color: #007bff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: background-color 0.3s;
+}
+
+#myButton:hover {
+    background-color: #0056b3;
+}
+
+input:focus {
+    border: 2px solid #007bff; /* Blue border for focused input */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle box-shadow */
+    outline: none; /* Remove default focus outline */
+}
+
+.error {
+    border: 2px solid #ff0000; /* Red border for error input */
+    background-color: #ffcccc; /* Light red background color */
 }
